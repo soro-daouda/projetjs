@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="FR">
+	<head>
+		<meta charset="utf-8"/>
+		<title>restauration</title>
+		<link rel="stylesheet" href="css/index.css"/>
+		
+	</head>
+	<body>
+		<div class="container" id="bloc-page">
+			<header>
+				<div id="titre_principal">
+					<div id="logo">
+						<img src="images/cuillere.jpg" alt="logo de zozor"/>
+						<h1>Hallo Resto</h1>
+					</div>
+
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#">Accueil</a></li>
+						<li><a href="menu">Menu</a></li>
+						<li><a href="inscription">s'inscrire</a></li>
+						<li><a href="connexion">se connecter</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<div id="banniere_image">
+				<h2>Resto classique et mets de qualité</h2>
+			</div>
+			
+			<section>
+				<article id="image-corps">
+					<h1>les meilleurs restaurants de qualité</h1>
+					<p>
+						Avec hallo resto vous pouvez avoir accès aux plats de qualité et en plus dans les meilleurs restaurants.
+						vous<br>avez au menu des plats africains telques le foutou igname, foutou banane;plats européens et Asiatiques...<br>
+						<img src="images/restaurant.jpg" alt="photo d'un restaurant">
+
+					</p>
+
+					<h1>Dans toutes les communes d'Abidjan</h1>
+					<p>
+						<span>Hallo resto</span> vous offre un lieu où il fait bon revenir tous les jours pour le café du matin,le petit déjeuner,<br> pour manger à midi ou tout simplement pour prendre un verre en bonne compagnie. hallo resto vous<br> facilite la tâche en mettant à votre disposition des restaurants de qualité et ce dans toutes les communes <br>d'Abidjan.<br>
+						<img src="images/commune.jpg" alt="photo d'une ville">
+					</p>
+
+				</article>
+				<aside>
+					<h1>Entrer votre commune !</h1>
+					<p>trouver les meilleurs restaurantd de votre commune ici</p>
+					<img src="images/bulle.png" alt="" id="fleche_bulle" />
+					<div>
+						<form method="post" action="/">
+							
+							<select name="commune" id="commune" required>
+							<option selected disabled>sélectionnez une commune svp</option>
+							{% for element in info %}
+								<option value="{{element.id_commmunes}}">{{element.nom_communes}}</option>
+							{% endfor %}
+						</select>
+							<input type="submit" value="ENVOYER">
+						</form>
+					</div>
+					
+				</aside>
+				
+			</section>
+			<div id="type_plats">
+					<p>
+						<img name="slide">
+						<legend>Plats Africain</legend>
+					</p>
+					<p>
+						<img name="euro">
+						<legend>Plats Europeen</legend>
+					</p>
+					<p>
+						<img name="asi">
+						<legend>Plats Asiatique</legend>
+					</p>
+			</div>
+			
+			<footer>
+				<div id="pied_de_page">
+					<div class="lien">
+						<h3>lien</h3>
+						<ul>
+							<li><a href="#">Accueil</a></li>
+							<li><a href="menu.html">Menu</a></li>
+							<li><a href="inscription.html">s'inscrire</a></li>
+							<li><a href="connexion.html">se connecter</a></li>
+						</ul>
+					</div>
+
+					<div class="footer">
+						<h3>restauration</h3>
+						<ul>
+							<li>Africaine</li>
+							<li>Européenne</li>
+							<li>Asiatique</li>
+						</ul>
+					</div>
+
+					<div class="footer">
+						<h3>Communes</h3>
+						<ul>
+							<li>Plateau</li>
+							<li>Cocody</li>
+							<li>Marcory</li>
+							<li>yopougon</li>
+							<li>etc ...</li>
+						</ul>
+					</div>
+				</div></br>
+							
+			</footer>
+				<div style="text-align: center; background-color: #908F8E; padding:25px 0px">
+					<h4>© copyright. tout droit revervé | projet javaScript</h4>
+				</div>
+		</div>
+		<script type="text/javascript" src="js/javascript.js"></script>
+	</body>
+</html>

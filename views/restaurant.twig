@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="FR">
+	<head>
+		<meta charset="utf-8"/>
+		<title>restauration</title>
+		<link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.js"></script>
+        <style>
+            body{
+                text-align: center;
+            }
+            #liste{
+                text-decoration: underline;
+                text-transform: uppercase;
+                margin-bottom: 30px;
+                padding-bottom: 7px;
+            }
+            #restaurant, #localisation, #contact{ 
+                color:rgb(95, 97, 204);
+                font-weight: bold;
+            }
+            #resto, #local, #phone{
+                margin-top: 30px;
+                font-size:25px; 
+            }
+            #para{
+                color:red;
+            }
+        </style>
+		
+	</head>
+	<body>
+        <div id="">
+            <h3 id="liste">liste des restaurants disponibles a {{nomcommune.nom_communes}}</h3>
+            {% if notview == false %}
+                <p id="para"> Pour avoir plus contenus, veuillez-vous <a href='/inscription' class='btn btn-primary'>inscrire</a> ou <a href='/connexion' class='btn btn-danger'>connecter</a></p>
+            {% endif %}
+            {% for element in infos %}
+                <div class="block">
+                    <p id="resto">Nom du restaurant: <span class="" id="restaurant">{{element.nom_restaurants}}</span></p><br><br>
+                    {% if notview %}
+                    <p id="local">Localisation: <span id="localisation">{{element.localisation}}</span></p><br><br>
+                    <p id="phone">Contact: <span class="glyphicon glyphicon-phone-alt"></span><span id="contact">{{element.contact}}</span></p><br><br>
+                    <form method="post">
+                        <input type="hidden" name="id_restaurant" value="{{element.id_restorants}}"><br><br>
+                        <button type="submit" class="btn btn-success">voir les plats de ce restaurants</button>
+                    </form>
+                    {% endif %}
+                </div>
+            {% endfor %}
+		</div>
+		<script type="text/javascript" src="js/javascript.js"></script>
+	</body>
+</html>

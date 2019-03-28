@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profil</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/profil.css">
+</head>
+<body>
+	<div class="container" id="profil">
+		<div class="heading col-md-12"><h2>BIENVENU SUR VOTRE PROFIL</h2><div class="divider"></div></div>
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1">
+				<div class="col-md-12">
+					<img src="images/profil.jpg" id="image">
+				</div>
+				<div class="col-md-12">
+					<h4>Bienvenu: {{user.nom}} {{user.prenom}}</h4>
+				</div>
+				<div class="col-md-12">
+					<h6>veuillez saisir le nom de la commune dans le champs si dessous</h4>
+				</div>
+				<div>
+					<form method="post">
+						<select name="commune" id="commune" required>
+							<option selected disabled>sélectionnez une commune svp</option>
+							{% for element in info %}
+								<option value="{{element.id_commmunes}}">{{element.nom_communes}}</option>
+							{% endfor %}
+						</select>
+						<input type="submit" value="rechercher">
+					</form>
+					<a href="profil/deconnexion" class="btn btn-danger" id="deconnexion">déconnexion</a>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

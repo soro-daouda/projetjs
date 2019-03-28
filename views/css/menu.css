@@ -1,0 +1,61 @@
+header p{
+	background: url('images/menu1.jpg');
+	height: 50%;
+	width: 100%;
+}
+header h1, p{
+	line-height: 30px;
+	text-align: center;
+}
+
+#menu img{
+	height: 300px;
+	width: 550px;
+}
+
+#menu h3, h4, p{
+	text-align: center;
+}
+
+#menu h3{
+	padding-bottom: 10px;
+	text-decoration: underline;
+	color: #1570f9;
+}
+
+/* footer */
+
+footer{
+	display: flex;
+	background: url('../images/ico_top.png') no-repeat top center,
+				url('../images/separateur.png') repeat-x top,
+				url('../images/ombre.png') repeat-x top;
+	padding-top: 25px;
+}
+
+footer div h3{
+	text-transform: uppercase;
+	color: blue;
+	font-size: 25px;
+}
+
+footer li{
+	list-style-type: none;
+}
+
+footer li a{
+	text-decoration: none;
+	color: black;
+}
+
+#pied_de_page{
+	display: flex;
+}
+
+.footer{
+	margin-left: 380px;
+}
+
+.lien{
+	margin-left: 50px;
+}

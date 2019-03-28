@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Connexion</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/connexion.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+	
+	<div style="font-size: 35px; margin-left: 20px; margin-top: 20px"><a href="index"><span class="glyphicon glyphicon-circle-arrow-left"></span></a></div>
+		<div class="login-box">
+			<div class="hide-login-btn"></div>
+			<div class="col-md-12">
+				<h1 id="titre">SE CONNECTER</h1>
+			</div>
+			<div>
+				{% for error in errors %}
+					<span style="color: red;font-size: 1.1em; text-align:center">{{error.msg}}</span><br>
+				{% endfor %}
+				<form class="login-form" action="" method="post" name="connexion">
+					<div>
+						<input class="txtb" type="email" name="email" placeholder="E-mail" id="email">
+						<div id="email_error" class="val_error"></div>
+					</div>
+					<div>
+						<input class="txtb" type="password" name="password" placeholder="password" id="password">
+						<div id="password_error" class="val_error"></div>
+					</div>
+					<input class="login-btn" type="submit" name="" value="Connexion">
+				</form>
+			</div>
+		</div>
+	</div>
+	{% if faux %}
+		<div class="modal fade" id="echec">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3>Erreur</h3>
+					</div>
+					<div class="modal-body">
+						<p>vous n'êtes pas inscrit sur notre plateforme veuillez vous inscrire svp</p>
+						<a href="" class="btn btn-danger" style='margin-right: 120px;'>j'ai oublié mon mot de passe</a><a class="btn btn-success" href="/inscription">inscription</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$("#echec").modal("show");
+			});
+		</script>
+	{% endif %}
+	<footer>
+				<div id="pied_de_page">
+					<div class="lien">
+						<h3>lien</h3>
+						<ul>
+							<li><a href="index.html">Accueil</a></li>
+							<li><a href="menu.html">Menu</a></li>
+							<li><a href="inscription.html">s'inscrire</a></li>
+							<li><a href="#">se connecter</a></li>
+						</ul>
+					</div>
+
+					<div class="footer">
+						<h3>restauration</h3>
+						<ul>
+							<li>Africaine</li>
+							<li>Européenne</li>
+							<li>Asiatique</li>
+						</ul>
+					</div>
+
+					<div class="footer">
+						<h3>Communes</h3>
+						<ul>
+							<li>Plateau</li>
+							<li>Cocody</li>
+							<li>Marcory</li>
+							<li>yopougon</li>
+							<li>etc ...</li>
+						</ul>
+					</div>
+				</div></br>
+							
+			</footer>
+				<div style="text-align: center; background-color: #908F8E; padding:25px 0px">
+					<h4>© copyright. tout droit revervé | projet javaScript</h4>
+				</div>
+
+</body>
+</html>
